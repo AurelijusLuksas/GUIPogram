@@ -5,21 +5,39 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
+/**
+ * @author Aurelijus Lukšas 5gr.
+ * Class used for calculating and returning the output values.
+ */
 public class Outputs{
-
+    /**
+     * Method used for calculating the age of the user.
+     * @param birthDateInput String value of the birth date.
+     * @return int value of the age.
+     */
     public static int getAge(String birthDateInput) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate birthDate = LocalDate.parse(birthDateInput, formatter);
         LocalDate currentDate = LocalDate.now();
         return Period.between(birthDate, currentDate).getYears();
     }
-
+    /**
+     * Method used for calculating the BMI of the user.
+     * @param height String value of the height.
+     * @param weight String value of the weight.
+     * @return String value of the BMI.
+     */
     public static String getBMI(String height, String weight) {
         double heightInMeters = Double.parseDouble(height) / 100;
         double weightInKg = Double.parseDouble(weight);
         double bmi = weightInKg / (heightInMeters * heightInMeters);
         return String.format("%.2f", bmi);
     }
+    /**
+     * Method used for calculating the wealth of the user.
+     * @param income String value of the income.
+     * @return String value of the wealth.
+     */
     public static String getWealth(String income) {
         double wealth = Double.parseDouble(income);
         if (wealth < 1000) {
@@ -30,6 +48,11 @@ public class Outputs{
             return "Rich";
         }
     }
+    /**
+     * Method used for calculating the health of the user.
+     * @param bmiValue float value of the BMI.
+     * @return String value of the health.
+     */
     public static String getHealth(float bmiValue) {
         if (bmiValue < 18.5) {
             return "Underweight";
@@ -39,7 +62,13 @@ public class Outputs{
             return "Overweight";
         }
     }
-
+    /**
+     * Method used for calculating the status of the user.
+     * @param bmiValue float value of the BMI.
+     * @param wealth String value of the wealth.
+     * @param age int value of the age.
+     * @return String value of the status.
+     */
     public static String getStatus(float bmiValue, String wealth, int age) {
         String status = null;
 

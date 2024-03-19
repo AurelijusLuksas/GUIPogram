@@ -1,11 +1,22 @@
 package main.guiprogram;
 
+/**
+ * @author Aurelijus Lukšas 5 gr.
+ * Class that implements Command interface and is used to execute UserDataCommand
+ */
 public class UserDataCommand implements Command {
     private Data data;
+    /**
+     * Constructor for UserDataCommand
+     * @param data Data object
+     */
     public UserDataCommand(Data data) {
         this.data = data;
     }
-
+    /**
+     * Method that executes UserDataCommand
+     * @param controller OutputController object
+     */
     @Override
     public void execute(OutputController controller) {
         controller.ageOutput.setText(Outputs.getAge(data.getBirthDate()) + " years");

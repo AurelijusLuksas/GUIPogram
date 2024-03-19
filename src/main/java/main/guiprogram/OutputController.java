@@ -2,7 +2,11 @@ package main.guiprogram;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
+/**
+ * @author Aurelijus Lukšas 5gr.
+ * OutputController class is a controller class for the view-next.fxml file.
+ * It is responsible for setting the data to the view-next.fxml file.
+ */
 public class OutputController{
     private Data data;
     public void setData(Data data) {
@@ -18,7 +22,9 @@ public class OutputController{
     public Label wealthOutput;
     @FXML
     public Label OverallOutput;
-
+    /**
+     * Initializes the data in the view-next.fxml file.
+     */
     @FXML
     public void initialize() {
         switch (InputController.sendOption) {

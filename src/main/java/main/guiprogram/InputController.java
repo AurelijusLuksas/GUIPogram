@@ -12,7 +12,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ * @author Aurelijus Lukšas 5gr.
+ * InputController class is a controller class for the view.fxml file.
+ * It is responsible for setting the data to the view.fxml file.
+ */
 public class InputController {
     @FXML
     private Label welcomeText;
@@ -32,23 +36,36 @@ public class InputController {
     private TextField income;
     Singleton singleton = Singleton.getInstance();
     static Data data;
-
+    /**
+     * Initializes the data in the view.fxml file.
+     */
     public String getBirthDate() {
         return birthDate.getValue().toString();
     }
-
+    /**
+     * Initializes the data in the view.fxml file.
+     */
     public String getHeight() {
         return height.getText();
     }
-
+    /**
+     * Initializes the data in the view.fxml file.
+     */
     public String getWeight() {
         return weight.getText();
     }
 
+    /**
+     * Initializes the data in the view.fxml file.
+     * @return income.getText();
+     */
     public String getIncome() {
         return income.getText();
     }
 
+    /**
+     * Initializes the data in the view.fxml file.
+     */
     public void updateData() {
         data = new Data.Builder()
                 .setBirthDate(getBirthDate())
@@ -59,12 +76,15 @@ public class InputController {
 
     }
 
+    /**
+     * Initializes the data in the view.fxml file and opens second stage.
+     * @param event
+     */
     @FXML
     private void onOpenNextWindowClick(ActionEvent event) {
         updateData();
         singleton.setData(data);
 
-        // Show the second stage
         try {
             Stage secondStage = new Stage();
             FXMLLoader fxmlLoaderNext = new FXMLLoader(Application.class.getResource("view-next.fxml"));
@@ -76,7 +96,6 @@ public class InputController {
             secondStage.setScene(sceneNext);
             secondStage.show();
 
-            // Get the current stage and hide it
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             currentStage.hide();
         } catch (IOException e) {
@@ -84,14 +103,24 @@ public class InputController {
         }
     }
 
+    /**
+     * Initializes the data in the view.fxml file.
+     * @param actionEvent
+     */
     public void sceneControlSend(ActionEvent actionEvent) {
         sendOption = 1;
     }
-
+    /**
+     * Initializes the data in the view.fxml file.
+     * @param actionEvent
+     */
     public void userDataSend(ActionEvent actionEvent) {
         sendOption = 0;
     }
-
+    /**
+     * Initializes the data in the view.fxml file.
+     * @param actionEvent
+     */
     public void singletonSend(ActionEvent actionEvent) {
         sendOption = 2;
     }
