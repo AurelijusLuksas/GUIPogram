@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="489.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.guiprogram.InputController">
+   <children>
+      <AnchorPane prefHeight="489.0" prefWidth="572.0">
+         <children>
+            <Button layoutX="235.0" layoutY="389.0" onAction="#sceneControlSend" text="Scene Controller" />
+            <Label layoutX="172.0" layoutY="14.0" prefHeight="47.0" prefWidth="230.0" text="Choose your year of birth:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="birthDate" layoutX="160.0" layoutY="61.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="194.0" layoutY="101.0" prefHeight="47.0" prefWidth="201.0" text="Enter your height (cm):">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="height" layoutX="160.0" layoutY="148.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="206.0" layoutY="225.0" prefHeight="47.0" prefWidth="161.0" text="Enter your weight:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="weight" layoutX="160.0" layoutY="235.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="206.0" layoutY="275.0" prefHeight="47.0" prefWidth="161.0" text="Enter your income:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="income" layoutX="160.0" layoutY="322.0" prefHeight="40.0" prefWidth="253.0" />
+            <Label layoutX="229.0" layoutY="362.0" prefHeight="25.0" prefWidth="131.0" text="Send data using:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="161.0" layoutY="389.0" onAction="#userDataSend" text="User Data" />
+            <Button layoutX="347.0" layoutY="389.0" onAction="#singletonSend" text="Singleton" />
+            <Label layoutX="194.0" layoutY="188.0" prefHeight="47.0" prefWidth="201.0" text="Enter your weight (kg):">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="255.0" layoutY="436.0" onAction="#onOpenNextWindowClick" text="Calculate" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
