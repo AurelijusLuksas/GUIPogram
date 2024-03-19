@@ -56,7 +56,7 @@
             </Label>
             <Label fx:id="OverallOutput" alignment="CENTER" layoutX="21.0" layoutY="226.0" prefHeight="77.0" prefWidth="560.0" text="null">
                <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
          </children>

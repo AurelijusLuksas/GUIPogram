@@ -31,7 +31,7 @@ public class InputController {
     @FXML
     private TextField income;
     Singleton singleton = Singleton.getInstance();
-    static Data data = new Data();
+    static Data data;
 
     public String getBirthDate() {
         return birthDate.getValue().toString();
@@ -50,10 +50,13 @@ public class InputController {
     }
 
     public void updateData() {
-        data.setBirthDate(getBirthDate());
-        data.setHeight(getHeight());
-        data.setWeight(getWeight());
-        data.setIncome(getIncome());
+        data = new Data.Builder()
+                .setBirthDate(getBirthDate())
+                .setHeight(Double.parseDouble(getHeight()))
+                .setWeight(Double.parseDouble(getWeight()))
+                .setIncome(Double.parseDouble(getIncome()))
+                .build();
+
     }
 
     @FXML

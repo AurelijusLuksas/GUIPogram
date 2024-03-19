@@ -5,22 +5,8 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Outputs extends Data{
-    public String getBirthDate() {
-        return super.getBirthDate();
-    }
+public class Outputs{
 
-    public String getHeight() {
-        return super.getHeight();
-    }
-
-    public String getWeight() {
-        return super.getWeight();
-    }
-
-    public String getIncome() {
-        return super.getIncome();
-    }
     public static int getAge(String birthDateInput) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate birthDate = LocalDate.parse(birthDateInput, formatter);

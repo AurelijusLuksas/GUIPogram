@@ -1,41 +1,63 @@
 package main.guiprogram;
 
-public class Data {
+public class Data implements IData {
     private String birthDate;
-    private String height;
-    private String weight;
-    private String income;
+    private double height;
+    private double weight;
+    private double income;
 
+    Data(Builder builder) {
+        this.birthDate = builder.birthDate;
+        this.height = builder.height;
+        this.weight = builder.weight;
+        this.income = builder.income;
+    }
 
+    public static class Builder {
+        private String birthDate;
+        private double height;
+        private double weight;
+        private double income;
+
+        public Builder setBirthDate(String birthDate) {
+            this.birthDate = birthDate;
+            return this;
+        }
+
+        public Builder setHeight(double height) {
+            this.height = height;
+            return this;
+        }
+
+        public Builder setWeight(double weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder setIncome(double income) {
+            this.income = income;
+            return this;
+        }
+
+        public Data build() {
+            return new Data(this);
+        }
+    }
+
+    // getters
     public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
-        this.height = height;
-    }
-
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getIncome() {
+    public double getIncome() {
         return income;
-    }
-
-    public void setIncome(String income) {
-        this.income = income;
     }
 }

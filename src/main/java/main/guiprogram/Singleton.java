@@ -2,7 +2,7 @@ package main.guiprogram;
 
 public class Singleton {
     private static Singleton instance = null;
-    private Data data = new Data();
+    private Data data;
     private Singleton() {
     }
     public Data getData() {
